@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WSUniversalLib
 {
-    public class Calculation
+    public static class Calculation
     {
-        public int GetQuantityForProduct(int productType, int materialType, int count, float width, float length)
+        public static int GetQuantityForProduct(int productType, int materialType, int count, float width, float length)
         {
             List<double> coefficientProductType = new List<double> { 1.1, 2.5, 8.43 };
             List<double> marriageMaterialType = new List<double> { 0.3, 0.12 };
