@@ -25,7 +25,12 @@ namespace WSUniversalLib
                 return -1;
             }
             double resultWithoutMarriage = count * coefficientProductType[productType - 1] * width * length; // Количество качественного сырья (без учета брака)
-            return (int)Math.Ceiling(resultWithoutMarriage + (resultWithoutMarriage * marriageMaterialType[materialType - 1] / 100));
+            int result = (int)Math.Ceiling(resultWithoutMarriage + (resultWithoutMarriage * marriageMaterialType[materialType - 1] / 100));
+            if(result == -2147483648) // -2147483648 получается, если число вышло за пределы своего типа
+            {
+                return -1;
+            }
+            return result;
         }
     }
 }
